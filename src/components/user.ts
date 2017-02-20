@@ -17,6 +17,10 @@ export class User implements IUser{
         this.password = password;
     }
 
+    getCredentials(){
+        return {"email":this.mail,"password":this.password};
+    }
+
     commenter(atelier:Workshop,titre:String,contenu:String){
         var comment = new Comment(titre,contenu);
         atelier.addComment(comment)

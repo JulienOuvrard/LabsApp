@@ -12,12 +12,30 @@ export class AuthService {
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Julien', 'Ouvrard', 'jouvrard@sodifrance.fr', 'azerty');
+        var users = [];
+        var userReq = new XMLHttpRequest();
+        userReq.open('GET','../../data/users.json',false);
+        userReq.send(null);
+        if(userReq.status == 200){
+          users = JSON.parse(userReq.responseText).map(function(user){
+            return new User(user.nom,user.prenom,user.email,user.password);
+          });
+        }
+
+        this.currentUser = this.retreiveUser(users,credentials.email,credentials.password);
+        let access = this.currentUser !== undefined;
+
         observer.next(access);
         observer.complete();
       });
     }
+  }
+
+  public retreiveUser(users:User[],email:String,password:String): User{
+      return users.filter(function(user){
+        var userCredentials = user.getCredentials();
+        return (password === userCredentials.password && email === userCredentials.email);
+      })[0];
   }
  
   public register(credentials) {
