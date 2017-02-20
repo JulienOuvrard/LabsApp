@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-title>Noter</ion-title>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Note</ion-label>
+            <ion-range min="0" max="5" snaps="true" [(ngModel)]="note">
+                <ion-label range-left class="small-text">0 <ion-icon name="star-outline"></ion-icon></ion-label>
+                <ion-label range-right>5 <ion-icon name="star-outline"></ion-icon></ion-label>
+            </ion-range>
+        </ion-item>
+    </ion-list>
+    <ion-buttons start>
+        <button ion-button (click)="validate()">
+            Valider
+        </button>
+        <button ion-button (click)="dismiss()">
+            Annuler
+        </button>
+    </ion-buttons>
+</ion-content>

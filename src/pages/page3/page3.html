@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Les ateliers</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+            <button ion-button secondary (click)="create($event)">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-row>
+        <!-- Header -->
+        <ion-row>
+            <ion-col>
+                <strong>Id</strong>
+            </ion-col>
+            <ion-col>
+                <strong>Nom</strong>
+            </ion-col>
+            <ion-col>
+                <strong>Date</strong>
+            </ion-col>
+            <ion-col>
+                <strong>Places restantes</strong>
+            </ion-col>
+            <ion-col></ion-col>
+        </ion-row>
+
+        <!-- Body -->
+        <ion-row *ngFor="let workshop of workshops">
+            <ion-col>
+                {{workshop.id}}
+            </ion-col>
+            <ion-col>
+                {{workshop.nom}}
+            </ion-col>
+            <ion-col>
+                {{workshop.date}}
+            </ion-col>
+            <ion-col>
+                {{workshop.remainsPlaces}} / {{workshop.places}}
+            </ion-col>
+            <ion-col>
+                <button ion-button secondary (click)="itemTapped($event, workshop)">
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-title>Commenter</ion-title>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+
+        <ion-item>
+            <ion-label stacked>Titre</ion-label>
+            <ion-input type="text" [(ngModel)]="title"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Contenu</ion-label>
+            <ion-input type="text" [(ngModel)]="content"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-buttons start>
+        <button ion-button (click)="validate()">
+            Valider
+        </button>
+        <button ion-button (click)="dismiss()">
+            Annuler
+        </button>
+    </ion-buttons>
+</ion-content>

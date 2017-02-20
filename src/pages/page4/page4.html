@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Créer un atelier</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+
+        <ion-item>
+            <ion-label stacked>Nom</ion-label>
+            <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Theme</ion-label>
+            <ion-input type="text" [(ngModel)]="theme"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Date</ion-label>
+            <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="dateDisplay"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Description</ion-label>
+            <ion-input type="text" [(ngModel)]="description"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Prerequis</ion-label>
+            <ion-input type="text" [(ngModel)]="prerequis"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Salle</ion-label>
+            <ion-select [(ngModel)]="selectedRoom">
+                <ion-option *ngFor="let salle of roomDisplay" [value]="salle.key">{{salle.value}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Places</ion-label>
+            <ion-range min="0" max="10" snaps="true" [(ngModel)]="places">
+                <ion-label range-left class="small-text">0</ion-label>
+                <ion-label range-right>10</ion-label>
+            </ion-range>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding>
+        <button ion-button (click)="createWorkshop()">Créer</button>
+    </div>
+</ion-content>
