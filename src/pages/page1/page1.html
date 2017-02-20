@@ -5,7 +5,7 @@
     </button>
     <ion-title>Le garage <ion-icon name="flask"></ion-icon> </ion-title>
     <ion-buttons end>
-      <button ion-button > Déconnexion </button>
+      <button ion-button (click)="logout()">Déconnexion  <ion-icon name="log-out"></ion-icon></button>
     </ion-buttons>
     
   </ion-navbar>
@@ -13,6 +13,6 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Bienvenue sur le site du garage</h3>
+  <h3>Bienvenue sur le site du garage, {{user.nom}} {{user.prenom}}</h3>
   <p> Cliquez sur le menu pour accéder à la liste des ateliers</p>
 </ion-content>
