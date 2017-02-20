@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
+import { AuthService } from '../page0/authService';
+
 import { Workshop } from '../../components/workshop';
 
 import { User } from '../../components/user';
@@ -20,8 +22,8 @@ export class Page3 {
   icons: string[];
   workshops: Array<Workshop>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.user = navParams.get('user') || new User("Ouvrard","Julien","jouvrard@sodifrance.fr","azerty123");
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService) {
+    this.user = auth.getUserInfo();
     this.workshops = [];
     var worksReq = new XMLHttpRequest();
     worksReq.open('GET','../../data/workshops.json',false);

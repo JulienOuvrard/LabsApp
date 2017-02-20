@@ -22,8 +22,5 @@ export class Page1 {
         this.navCtrl.setRoot(Page0)
     });
   }
-
-  public getUser():IUser{
-    return this.user;
-  }
+  
 }
