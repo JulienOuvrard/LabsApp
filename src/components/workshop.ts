@@ -26,6 +26,7 @@ export class Workshop implements IWorkshop{
         this.salle = salle;
         this.places = places;
         this.remainsPlaces = places.valueOf();
+        this.users = [];
     }
 
     addComment(comment:IComment){

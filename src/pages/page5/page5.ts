@@ -4,6 +4,8 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { Workshop } from '../../components/workshop';
 
+import { User } from '../../components/user';
+
 import { CommentModal } from './page5Modal';
 
 import { GradeModal } from './page5Modal2';
@@ -14,8 +16,10 @@ import { GradeModal } from './page5Modal2';
 })
 export class Page5 {
     selectedWorkshop: Workshop;
+    user: User;
     constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
         this.selectedWorkshop = navParams.get('item');
+        this.user = navParams.get('user');
         console.log(this.selectedWorkshop);
     }
 
@@ -45,7 +49,8 @@ export class Page5 {
     }
 
     participateWorkshop(){
-        console.log()
+        console.log("PARTICIPATE");
+        this.user.participer(this.selectedWorkshop);
         this.navCtrl.pop();
     }
 }
