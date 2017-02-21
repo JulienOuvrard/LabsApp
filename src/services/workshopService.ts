@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 
-let workshopsURL = '../../data/workshops.json';
+let workshopsURL = '../../assets/data/workshops.json';
 
 @Injectable()
 export class WorkshopService {

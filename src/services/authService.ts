@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import { Headers, RequestOptions, Http} from '@angular/http';
 import {User} from '../components/user';
 
-let usersURL = '../../data/users.json';
+let usersURL = '../../assets/data/users.json';
 
 @Injectable()
 export class AuthService {
