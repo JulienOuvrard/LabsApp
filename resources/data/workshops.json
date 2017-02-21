@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "nom": "1er Atelier",
+        "theme": "",
+        "date": "08/02/2017",
+        "description": "",
+        "prerequis": "",
+        "salle": "ALABAMA",
+        "places": 8
+    },
+    {
+        "id": 1,
+        "nom": "2eme Atelier",
+        "theme": "",
+        "date": "08/03/2017",
+        "description": "",
+        "prerequis": "",
+        "salle": "ALABAMA",
+        "places": 8
+    }
+]

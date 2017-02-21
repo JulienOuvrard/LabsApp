@@ -1,0 +1,11 @@
+[{
+    "nom":"Ouvrard",
+    "prenom":"Julien",
+    "email":"jouvrard@sodifrance.fr",
+    "password":"azerty123"
+},{
+    "nom":"Admin",
+    "prenom":"admin",
+    "email":"admin@sodifrance.fr",
+    "password":"qwerty456" 
+}]
