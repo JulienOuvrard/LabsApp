@@ -9,10 +9,10 @@ import { User } from '../../components/user';
 import { Workshop } from '../../components/workshop';
 
 @Component({
-  selector: 'page-page4',
-  templateUrl: 'page4.html'
+  selector: 'page-createWorkshop',
+  templateUrl: 'createWorkshopPage.html'
 })
-export class Page4 {
+export class CreateWorkshopPage {
 
     user:User;
     id: Number;

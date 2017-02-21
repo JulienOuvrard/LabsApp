@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 
 @Component({
-    selector: 'page5-modal2',
-    templateUrl: 'page5Modal2.html'
+    selector: 'workshopDetail-GradeModal',
+    templateUrl: 'workshopDetailPage_GradeModal.html'
 })
 export class GradeModal {
 

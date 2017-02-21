@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 
 @Component({
-    selector: 'page5-modal',
-    templateUrl: 'page5Modal.html'
+    selector: 'workshopDetail-CommentModal',
+    templateUrl: 'workshopDetailPage_CommentModal.html'
 })
 export class CommentModal {
 

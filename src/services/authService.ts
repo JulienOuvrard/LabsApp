@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import { Headers, RequestOptions, Http} from '@angular/http';
-import {User} from '../../components/user';
+import {User} from '../components/user';
 
 let usersURL = '../../data/users.json';
 

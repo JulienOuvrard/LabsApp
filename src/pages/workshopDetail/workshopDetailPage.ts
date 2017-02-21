@@ -6,15 +6,15 @@ import { Workshop } from '../../components/workshop';
 
 import { User } from '../../components/user';
 
-import { CommentModal } from './page5Modal';
+import { CommentModal } from './workshopDetailPage_CommentModal';
 
-import { GradeModal } from './page5Modal2';
+import { GradeModal } from './workshopDetailPage_GradeModal';
 
 @Component({
-    selector: 'page-page5',
-    templateUrl: 'page5.html'
+    selector: 'page-workshopDetail',
+    templateUrl: 'workshopDetailPage.html'
 })
-export class Page5 {
+export class WorkshopDetailPage {
     selectedWorkshop: Workshop;
     user: User;
     constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {

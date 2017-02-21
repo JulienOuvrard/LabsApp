@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-import { AuthService } from '../page0/authService';
-import {Page0} from '../page0/page0';
+import { AuthService } from '../../services/authService';
+
+import {LoginPage} from '../login/loginPage';
 
 @Component({
-  selector: 'page-page1',
-  templateUrl: 'page1.html'
+  selector: 'page-home',
+  templateUrl: 'homePage.html'
 })
-export class Page1 {
+export class HomePage {
 
   user:IUser;
 
@@ -19,7 +20,7 @@ export class Page1 {
 
   public logout() {
     this.auth.logout().subscribe(succ => {
-        this.navCtrl.setRoot(Page0)
+        this.navCtrl.setRoot(LoginPage)
     });
   }
   

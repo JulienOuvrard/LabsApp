@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
-import { AuthService } from '../page0/authService';
+import { AuthService } from '../../services/authService';
 
 import { Workshop } from '../../components/workshop';
 
 import { User } from '../../components/user';
 
-import { Page4 } from '../page4/page4';
+import { CreateWorkshopPage } from '../createWorkshop/createWorkshopPage';
 
-import { Page5 } from '../page5/page5';
+import { WorkshopDetailPage } from '../workshopDetail/workshopDetailPage';
 
-import { WorkshopService } from './workshopService';
+import { WorkshopService } from '../../services/workshopService';
 
 @Component({
-  selector: 'page-page3',
-  templateUrl: 'page3.html'
+  selector: 'page-workshops',
+  templateUrl: 'workshopsPage.html'
 })
-export class Page3 {
+export class WorkshopsPage {
   user:User;
   workshops: Array<Workshop>;
 
@@ -31,11 +31,11 @@ export class Page3 {
 
   itemTapped(event, item) {
     console.log('Voir atelier ', item.id);
-    this.navCtrl.push(Page5, {item:item, user:this.user});
+    this.navCtrl.push(WorkshopDetailPage, {item:item, user:this.user});
   }
 
   create(event){
     console.log('Create new workshop');
-    this.navCtrl.push(Page4, {user:this.user, workshops: this.workshops});
+    this.navCtrl.push(CreateWorkshopPage, {user:this.user, workshops: this.workshops});
   }
 }
