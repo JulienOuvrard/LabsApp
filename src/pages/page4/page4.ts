@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { Rooms } from '../../components/rooms';
+
+import { User } from '../../components/user';
+
+import { Workshop } from '../../components/workshop';
 
 @Component({
   selector: 'page-page4',
@@ -10,6 +14,8 @@ import { Rooms } from '../../components/rooms';
 })
 export class Page4 {
 
+    user:User;
+    id: Number;
     name:String;
     theme:String;
     places:Number;
@@ -20,9 +26,14 @@ export class Page4 {
     room: String;
     roomDisplay:Object[];
     selectedRoom: Number;
+
+    workshops:Workshop[];
     
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.workshops = navParams.get('workshops');
+      this.user = navParams.get('user');
+      this.id = this.workshops.length +1;
       this.name = "";
       this.theme = "";
       this.places = 0;
@@ -49,5 +60,8 @@ export class Page4 {
 
     createWorkshop(){
         console.log(this)
+        var salle = this.roomDisplay[this.selectedRoom.valueOf()]['value'];
+        this.workshops.push(this.user.organiser(this.id,this.name,this.theme,this.date,this.description,this.prerequis,salle,this.places));
+        this.navCtrl.pop();
     }
 }

@@ -30,7 +30,7 @@ export class Page5 {
                 console.log('ANNULE');
             } else {
                 console.log('Ajout du commentaire',comment);
-                this.selectedWorkshop.addComment(comment)
+                this.user.commenter(this.selectedWorkshop,comment.titre,comment.contenu);
             }
         });
         modal.present();
@@ -43,6 +43,7 @@ export class Page5 {
                 console.log('ANNULE');
             } else {
                 console.log('Ajout de la note', data);
+                this.user.noter(this.selectedWorkshop,data.note)
             }
         });
         modal.present();

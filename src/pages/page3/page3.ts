@@ -17,7 +17,7 @@ import { Page5 } from '../page5/page5';
   templateUrl: 'page3.html'
 })
 export class Page3 {
-  user:IUser;
+  user:User;
   selectedItem: any;
   icons: string[];
   workshops: Array<Workshop>;
@@ -42,7 +42,7 @@ export class Page3 {
   }
 
   create(event){
-    console.log('Create new workshop')
-    this.navCtrl.push(Page4);
+    console.log('Create new workshop');
+    this.navCtrl.push(Page4, {user:this.user, workshops: this.workshops});
   }
 }
