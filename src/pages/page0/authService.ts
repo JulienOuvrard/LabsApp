@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import { Headers, RequestOptions, Http} from '@angular/http';
 import {User} from '../../components/user';
+
+let usersURL = '../../data/users.json';
 
 @Injectable()
 export class AuthService {
@@ -14,7 +17,7 @@ export class AuthService {
         // At this point make a request to your backend to make a real check!
         var users = [];
         var userReq = new XMLHttpRequest();
-        userReq.open('GET','../../data/users.json',false);
+        userReq.open('GET',usersURL,false);
         userReq.send(null);
         if(userReq.status == 200){
           users = JSON.parse(userReq.responseText).map(function(user){

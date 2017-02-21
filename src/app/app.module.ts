@@ -11,6 +11,7 @@ import { Page5 } from '../pages/page5/page5';
 import { CommentModal } from '../pages/page5/page5Modal';
 import { GradeModal } from '../pages/page5/page5Modal2';
 import { AuthService } from '../pages/page0/authService';
+import { WorkshopService } from '../pages/page3/workshopService';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,6 @@ import { AuthService } from '../pages/page0/authService';
     CommentModal,
     GradeModal
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService, WorkshopService]
 })
 export class AppModule {}

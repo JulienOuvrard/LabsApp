@@ -12,28 +12,21 @@ import { Page4 } from '../page4/page4';
 
 import { Page5 } from '../page5/page5';
 
+import { WorkshopService } from './workshopService';
+
 @Component({
   selector: 'page-page3',
   templateUrl: 'page3.html'
 })
 export class Page3 {
   user:User;
-  selectedItem: any;
-  icons: string[];
   workshops: Array<Workshop>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, private works: WorkshopService) {
     this.user = auth.getUserInfo();
-    this.workshops = [];
-    var worksReq = new XMLHttpRequest();
-    worksReq.open('GET','../../data/workshops.json',false);
-    worksReq.send(null);
-      if(worksReq.status == 200){
-        this.workshops = JSON.parse(worksReq.responseText).map(function(work){
+    works.findAll().subscribe(data => this.workshops = data.map(function(work){
           return new Workshop(work.id,work.nom,work.theme,work.date,work.description,work.prerequis,work.salle,work.places);
-        });
-      }
-
+        }));
   }
 
   itemTapped(event, item) {
