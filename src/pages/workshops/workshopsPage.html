@@ -16,8 +16,8 @@
             </button>
         </ion-row>
         <!-- Header -->
-        <ion-row>
-            <ion-col>
+        <ion-row class="workshop-header">
+            <ion-col width-10>
                 <strong>Id</strong>
             </ion-col>
             <ion-col>
@@ -33,18 +33,18 @@
         </ion-row>
 
         <!-- Body -->
-        <ion-row *ngFor="let workshop of workshops">
-            <ion-col>
-                {{workshop.id}}
+        <ion-row *ngFor="let workshop of workshops" class="workshop-row">
+            <ion-col width-10>
+                <ion-label>{{workshop.id}}</ion-label>
             </ion-col>
             <ion-col>
-                {{workshop.nom}}
+                <ion-label>{{workshop.nom}}</ion-label>
             </ion-col>
             <ion-col>
-                {{workshop.date}}
+                <ion-label>{{workshop.dateString}}</ion-label>
             </ion-col>
             <ion-col>
-                {{workshop.remainsPlaces}} / {{workshop.places}}
+                <ion-label>{{workshop.remainsPlaces}} / {{workshop.places}}</ion-label>
             </ion-col>
             <ion-col>
                 <button ion-button secondary (click)="itemTapped($event, workshop)">

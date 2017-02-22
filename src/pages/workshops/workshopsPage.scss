@@ -1,3 +1,21 @@
 page-workshops{
-    
+    .workshop-header{
+        border-bottom: 1px solid #000000;
+        ion-col{
+            text-align: center
+        }
+    }
+    .workshop-row{
+        &:nth-child(even){
+            background-color: #56DCBC;
+            border-bottom: 1px solid #ffffff
+        }
+        ion-col{
+            text-align: center;
+            &:not(:first-child){
+                border-left: 1px solid #000000;
+            }
+            
+        }
+    }
 }
